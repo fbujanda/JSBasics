@@ -1,0 +1,25 @@
+sudo apt-get install vim  (para instalar el editor)
+comando i para introducir texto
+podemos tipear cualquier vaina
+para guardfar :w
+para salir q
+
+debemos volver al modo inicial (de control) mediante esc
+
+comandos linux para manejo de usuario
+ordenes importantes de modificación de archivos se precede con sudo
+
+cut -d: -f1 /etc/passwd  => lista sucinta (cut) de los usuarios en ese SO
+whoami  => lista con qué usuario estas trabajando
+sudo cat /etc/passwd | grep 'usuario' => explica atributos de 'usuario'
+groups => grupos a los que pertenecemos
+sudo cat /etc/group => Todos los grupos que estan en el sistema
+sudo adduser alice => crea un usuario de nombre alice
+sudo addgroup employees => crea un grupo de usuarios
+sudo usermod -a -G employees alice => agrega alice al grupo employees (-a: append , G: group)
+su alice -l => cambias de usuario al nuevo creado es decir alice. Ahí pide psw
+su fidias --login => la misma vaina que el anterior. su: substitute user
+sudo tail /var/log/auth.log => para revisar los comandos realizados con sudo
+sudo groupdel employees => Borra el grupo. Pide psw . Borrar el grupo no es borrar el usuario
+sudo userdel -r alice => Borra al usuario incluyendo los directorios home asociados a alice 
+

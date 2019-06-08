@@ -1,0 +1,50 @@
+/*
+
+  function myReplace(str, before, after) {
+    return str;
+  }  
+
+  function Dog(name) {
+    this.name = name;
+  }
+  //************ Challenges
+  // Add your code below this line
+  function joinDogFraternity(candidate) {
+    if (candidate.constructor === Dog) {
+      return true;
+    }else {
+      return false;
+    }
+  }
+  //***********
+  function Dog(name) {
+    this.name = name; 
+  }
+  
+  Dog.prototype = {
+    // Add your code below this line
+    numLegs : 4,
+    eat :  function () {
+       console.log(" ruaf ruaf ruaf");
+    },
+    describe : function () {
+      console.log("My name is " + this.name);
+    }
+  };
+
+  //************ Overriding a method from Animal
+function Animal() { }   //Constructor
+Animal.prototype.eat = function() {   //Método añadido al prototype de Animal
+  return "nom nom nom";
+};
+function Bird() { }   //Constructor
+
+// Inherit all methods from Animal
+Bird.prototype = Object.create(Animal.prototype);  //Se subsume a Animal (superclase)
+
+Bird.prototype.constructor = Bird;
+
+// Bird.eat() overrides Animal.eat()
+Bird.prototype.eat = function() {   // Con el mismo nombre se le sobrepone al de Animal
+  return "peck peck peck";
+};

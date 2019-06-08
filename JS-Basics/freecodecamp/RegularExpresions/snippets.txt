@@ -1,0 +1,60 @@
+
+.       - Any Character Except New Line
+\d      - Digit (0-9)
+\D      - Not a Digit (0-9)
+\w      - Word Character (a-z, A-Z, 0-9, _)
+\W      - Not a Word Character
+\s      - Whitespace (space, tab, newline)
+\S      - Not Whitespace (space, tab, newline)
+
+\b      - Word Boundary
+\B      - Not a Word Boundary
+^       - Beginning of a String
+$       - End of a String
+
+[]      - Matches Characters in brackets
+[^ ]    - Matches Characters NOT in brackets
+|       - Either Or
+( )     - Group
+
+Quantifiers:
+*       - 0 or More
++       - 1 or More
+?       - 0 or One
+{3}     - Exact Number
+{3,4}   - Range of Numbers (Minimum, Maximum)
+
+
+#### Sample Regexs ####
+
+[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+
+
+Objeto regular Expresion
+var regexLiteral = /cat/; //Regular expression literal
+var regexConstructor = new RegExp("cat")  //Regular expression Constructor
+
+METODO TEST
+const str1 = "the cat says meow";
+const str2 = "the dog says bark";
+const hasCat = /cat/;
+hasCat.test(str1);
+// true
+hasCat.test(str2);
+// false
+
+METODO MATCH
+regex.match("String").
+
+PARA LOS REEMPLAZOS usar el método .replace del Objeto String
+
+function removeCc(str){
+  return str.replace(/([A-Z])/g, ' $1');  
+}
+function lowerCase(str){
+  return str.replace(/[A-Z]/g, u => u.toLowerCase());
+}
+function capitalize(str){
+  return str.replace(/^[a-z]/, u => u.toUpperCase());
+}
+capitalize(lowerCase(removeCc('camelCaseIsFun')));
+// "Camel case is fun"
